@@ -77,22 +77,27 @@
             }
             // console.log(property)
             localStorage.setItem("properties", JSON.stringify(property))
-            var getObject = localStorage.getItem('properties');
-            var parsedObject = JSON.parse(getObject);
-            console.log(parsedObject)
+            // var getObject = localStorage.getItem('properties');
+            // var parsedObject = JSON.parse(getObject);
+            // console.log(parsedObject)
             // return parsedObject;
             // localStorage.removeItem("bgColor")
             // console.log(localStorage.getItem("bgColor"))
-            // window.location.reload()
-            var finalVal = JSON.stringify(parsedObject)
-            console.log(finalVal)
+            window.location.reload()
+            // var finalVal = JSON.stringify(parsedObject)
+            // console.log(finalVal)
             // document.getElementById("localStoreShow").innerHTML = Object.values(parsedObject)[0]
-            document.getElementById("localStoreShow").children[0].src = Object.values(parsedObject)[1]
+            // document.getElementById("localStoreShow").children[0].src = Object.values(parsedObject)[1]
         }
-        // (function () {
+        (function () {
+            var getObject = localStorage.getItem('properties');
+            var parsedObject = JSON.parse(getObject);
+            var finalVal = JSON.stringify(parsedObject)
+            document.getElementById("localStoreShow").children[0].src = Object.values(parsedObject)[1]
 
-        //     document.getElementById("localStoreShow").innerHTML = Object.values(parsedObject)[0]
-        // })();
+            // document.getElementById("localStoreShow") = localStorage.getItem("properties")
+            // console.log(localStorage.getItem("properties"))
+        })();
     </script>
 </body>
 
