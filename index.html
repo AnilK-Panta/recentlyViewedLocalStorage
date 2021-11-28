@@ -11,8 +11,10 @@
 
 <body>
     <div class="productWrap">
-        <div class="product1">
-            <div class="imagePart1" id="imagePart1" onclick="localSave(id)"></div>
+        <div class="product1" id="product1" onclick="localSave(id)">
+            <div class="imagePart1" id="imagePart1">
+                <img src="images/img1.jpg" alt="">
+            </div>
             <div class="contentWrap">
                 <div class="productTitle" id="productTitle" onclick="localSave(id)">Title 1</div>
                 <div class="productPrice">50</div>
@@ -20,37 +22,38 @@
                     veritatis assumenda quos </div>
             </div>
         </div>
-        <div class="product2">
-            <div class="imagePart2" id="imagePart2" onclick="localSave(id)"></div>
+        <div class="product2" id="product2" onclick="localSave(id)">
+
+            <div class="imagePart2"><img src="images/img2.jpg" alt=""></div>
             <div class="contentWrap">
-                <div class="productTitle">Title 1</div>
+                <div class="productTitle">Title 2</div>
                 <div class="productPrice">50</div>
                 <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
                     veritatis assumenda quos</div>
             </div>
         </div>
-        <div class="product3">
-            <div class="imagePart3" id="imagePart3" onclick="localSave(id)"></div>
+        <div class="product3" id="product3" onclick="localSave(id)">
+            <div class="imagePart3"><img src="images/img3.jpg" alt=""></div>
             <div class="contentWrap">
-                <div class="productTitle">Title 1</div>
+                <div class="productTitle">Title 3</div>
                 <div class="productPrice">50</div>
                 <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
                     veritatis assumenda quos</div>
             </div>
         </div>
-        <div class="product4">
-            <div class="imagePart4" id="imagePart4" onclick="localSave(id)"></div>
+        <div class="product4" id="product4" onclick="localSave(id)">
+            <div class="imagePart4"><img src="images/img1.jpg" alt=""></div>
             <div class="contentWrap">
-                <div class="productTitle">Title 1</div>
+                <div class="productTitle">Title 4</div>
                 <div class="productPrice">50</div>
                 <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
                     veritatis assumenda quos</div>
             </div>
         </div>
-        <div class="product5">
-            <div class="imagePart5" id="imagePart5" onclick="localSave(id)"></div>
+        <div class="product5" id="product5" onclick="localSave(id)">
+            <div class="imagePart5"><img src="images/img2.jpg" alt=""></div>
             <div class="contentWrap">
-                <div class="productTitle">Title 1</div>
+                <div class="productTitle">Title 5</div>
                 <div class="productPrice">50</div>
                 <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
                     veritatis assumenda quos</div>
@@ -62,19 +65,26 @@
     </div>
     <script>
         function localSave(e) {
-            const myDivObj = document.getElementById(e);
-            const x = window.getComputedStyle(myDivObj).backgroundColor;
-            let y = localStorage.setItem("bgColor", `${x}`)
+            // const myDivObj = document.getElementById(e).children[0].children[0].src;
 
+            // const x = window.getComputedStyle(myDivObj).backgroundColor;
+            // let y = localStorage.setItem("bgColor", `${x}`)
+            let property = {
+                title: document.getElementById(e).children[1].children[0].innerHTML,
+                bgImage: document.getElementById(e).children[0].children[0].src,
+                price: document.getElementById(e).children[1].children[1].innerHTML,
+                descript: document.getElementById(e).children[1].children[2].innerHTML,
+            }
+            console.log(property)
             // localStorage.removeItem("bgColor")
             // console.log(localStorage.getItem("bgColor"))
-            window.location.reload()
+            // window.location.reload()
 
         }
-        (function () {
+        // (function () {
 
-            document.getElementById("localStoreShow").style.backgroundColor = localStorage.getItem("bgColor")
-        })();
+        //     document.getElementById("localStoreShow").style.backgroundColor = localStorage.getItem("bgColor")
+        // })();
     </script>
 </body>
 
