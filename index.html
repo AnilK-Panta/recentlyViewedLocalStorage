@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="productWrap">
+        <div class="product1">
+            <div class="imagePart1" id="imagePart1" onclick="localSave(id)"></div>
+            <div class="contentWrap">
+                <div class="productTitle" id="productTitle" onclick="localSave(id)">Title 1</div>
+                <div class="productPrice">50</div>
+                <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
+                    veritatis assumenda quos </div>
+            </div>
+        </div>
+        <div class="product2">
+            <div class="imagePart2" id="imagePart2" onclick="localSave(id)"></div>
+            <div class="contentWrap">
+                <div class="productTitle">Title 1</div>
+                <div class="productPrice">50</div>
+                <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
+                    veritatis assumenda quos</div>
+            </div>
+        </div>
+        <div class="product3">
+            <div class="imagePart3" id="imagePart3" onclick="localSave(id)"></div>
+            <div class="contentWrap">
+                <div class="productTitle">Title 1</div>
+                <div class="productPrice">50</div>
+                <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
+                    veritatis assumenda quos</div>
+            </div>
+        </div>
+        <div class="product4">
+            <div class="imagePart4" id="imagePart4" onclick="localSave(id)"></div>
+            <div class="contentWrap">
+                <div class="productTitle">Title 1</div>
+                <div class="productPrice">50</div>
+                <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
+                    veritatis assumenda quos</div>
+            </div>
+        </div>
+        <div class="product5">
+            <div class="imagePart5" id="imagePart5" onclick="localSave(id)"></div>
+            <div class="contentWrap">
+                <div class="productTitle">Title 1</div>
+                <div class="productPrice">50</div>
+                <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
+                    veritatis assumenda quos</div>
+            </div>
+        </div>
+    </div>
+    <div id="localStoreShow" class="localStoreShow">
+
+    </div>
+    <script>
+        function localSave(e) {
+            const myDivObj = document.getElementById(e);
+            const x = window.getComputedStyle(myDivObj).backgroundColor;
+            let y = localStorage.setItem("bgColor", `${x}`)
+
+            // localStorage.removeItem("bgColor")
+            // console.log(localStorage.getItem("bgColor"))
+            window.location.reload()
+
+        }
+        (function () {
+
+            document.getElementById("localStoreShow").style.backgroundColor = localStorage.getItem("bgColor")
+        })();
+    </script>
+</body>
+
+</html>
