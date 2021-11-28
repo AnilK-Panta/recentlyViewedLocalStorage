@@ -61,7 +61,7 @@
         </div>
     </div>
     <div id="localStoreShow" class="localStoreShow">
-
+        <img src="" alt="">
     </div>
     <script>
         function localSave(e) {
@@ -75,15 +75,23 @@
                 price: document.getElementById(e).children[1].children[1].innerHTML,
                 descript: document.getElementById(e).children[1].children[2].innerHTML,
             }
-            console.log(property)
+            // console.log(property)
+            localStorage.setItem("properties", JSON.stringify(property))
+            var getObject = localStorage.getItem('properties');
+            var parsedObject = JSON.parse(getObject);
+            console.log(parsedObject)
+            // return parsedObject;
             // localStorage.removeItem("bgColor")
             // console.log(localStorage.getItem("bgColor"))
             // window.location.reload()
-
+            var finalVal = JSON.stringify(parsedObject)
+            console.log(finalVal)
+            // document.getElementById("localStoreShow").innerHTML = Object.values(parsedObject)[0]
+            document.getElementById("localStoreShow").children[0].src = Object.values(parsedObject)[1]
         }
         // (function () {
 
-        //     document.getElementById("localStoreShow").style.backgroundColor = localStorage.getItem("bgColor")
+        //     document.getElementById("localStoreShow").innerHTML = Object.values(parsedObject)[0]
         // })();
     </script>
 </body>
