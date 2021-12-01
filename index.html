@@ -18,7 +18,7 @@
             <div class="contentWrap">
                 <div class="productTitle" id="productTitle" onclick="localSave(id)">Title 1</div>
                 <div class="productPrice">50</div>
-                <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
+                <div class="productDescr">Lonsectetur adipisicing elit. Nemo aliquam, minus
                     veritatis assumenda quos </div>
             </div>
         </div>
@@ -27,8 +27,8 @@
             <div class="imagePart2"><img src="images/img2.jpg" alt=""></div>
             <div class="contentWrap">
                 <div class="productTitle">Title 2</div>
-                <div class="productPrice">50</div>
-                <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
+                <div class="productPrice">40</div>
+                <div class="productDescr"> ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
                     veritatis assumenda quos</div>
             </div>
         </div>
@@ -36,8 +36,9 @@
             <div class="imagePart3"><img src="images/img3.jpg" alt=""></div>
             <div class="contentWrap">
                 <div class="productTitle">Title 3</div>
-                <div class="productPrice">50</div>
-                <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
+                <div class="productPrice">60</div>
+                <div class="productDescr">Lorem ipsum,Lorem ipsum, dolor dolor sit amet consectetur adipisicing elit.
+                    Nemo aliquam, minus
                     veritatis assumenda quos</div>
             </div>
         </div>
@@ -45,7 +46,7 @@
             <div class="imagePart4"><img src="images/img1.jpg" alt=""></div>
             <div class="contentWrap">
                 <div class="productTitle">Title 4</div>
-                <div class="productPrice">50</div>
+                <div class="productPrice">90</div>
                 <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
                     veritatis assumenda quos</div>
             </div>
@@ -54,14 +55,14 @@
             <div class="imagePart5"><img src="images/img2.jpg" alt=""></div>
             <div class="contentWrap">
                 <div class="productTitle">Title 5</div>
-                <div class="productPrice">50</div>
-                <div class="productDescr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo aliquam, minus
+                <div class="productPrice">100</div>
+                <div class="productDescr"> sit amet consectetur adipisicing elit. Nemo aliquam, minus
                     veritatis assumenda quos</div>
             </div>
         </div>
     </div>
     <div id="localStoreShow" class="localStoreShow">
-        <img src="" alt="">
+
     </div>
     <script>
         function localSave(e) {
@@ -93,10 +94,17 @@
             var getObject = localStorage.getItem('properties');
             var parsedObject = JSON.parse(getObject);
             var finalVal = JSON.stringify(parsedObject)
-            document.getElementById("localStoreShow").children[0].src = Object.values(parsedObject)[1]
 
-            // document.getElementById("localStoreShow") = localStorage.getItem("properties")
-            // console.log(localStorage.getItem("properties"))
+            // document.getElementById("localStoreShow").children[0].src = Object.values(parsedObject)[1]
+
+            document.getElementById("localStoreShow").innerHTML = `<div class="product4" id="product4">
+            <div class="imagePart4"><img src=${Object.values(parsedObject)[1]} alt=""></div>
+            <div class="contentWrap">
+                <div class="productTitle">${Object.values(parsedObject)[0]}</div>
+                <div class="productPrice">${Object.values(parsedObject)[2]}</div>
+                <div class="productDescr">${Object.values(parsedObject)[3]}</div>
+            </div>
+        </div>`
         })();
     </script>
 </body>
